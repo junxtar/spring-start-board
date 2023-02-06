@@ -34,7 +34,8 @@ public class BoardEntity extends BaseEntity{
         boardEntity.setBoardPass(boardDTO.getBoardPass());
         boardEntity.setBoardTitle(boardDTO.getBoardTitle());
         boardEntity.setBoardContents(boardDTO.getBoardContents());
-        boardEntity.setBoardHits(boardDTO.getBoardHits());
+        boardEntity.setBoardHits(0);
+
         return boardEntity;
     }
 }
