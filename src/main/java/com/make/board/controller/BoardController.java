@@ -11,12 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/board")
-public class BoardController {
+public class BoardController{
 
     private final BoardService boardService;
 
@@ -27,7 +28,7 @@ public class BoardController {
 
     //데이터를 받을 때 dto클래스를 활용
     @PostMapping("/save")
-    public String save(@ModelAttribute BoardDTO boardDTO){
+    public String save(@ModelAttribute BoardDTO boardDTO)  throws IOException {
         boardService.save(boardDTO);
         return "index";
     }
